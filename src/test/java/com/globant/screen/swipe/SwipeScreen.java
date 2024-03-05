@@ -34,8 +34,7 @@ public class SwipeScreen extends NavBarScreen {
     private WebElement hiddenMessage;
 
     public String getTitleText(){
-        isElementDisplayed(titleSection);
-        return titleSection.getText();
+        return getTextElement(titleSection);
     }
 
     public boolean isVisibleHiddenLogo(){
@@ -48,9 +47,13 @@ public class SwipeScreen extends NavBarScreen {
         return hiddenMessage.isDisplayed();
     }
 
+    public String getHiddenMessageText(){
+        isElementDisplayed(hiddenMessage);
+        return hiddenMessage.getText();
+    }
+
     public String getInstructionText(){
-        isElementDisplayed(instructionsMessage);
-        return instructionsMessage.getText();
+        return getTextElement(instructionsMessage);
     }
 
     public int getNumberOfCard(){

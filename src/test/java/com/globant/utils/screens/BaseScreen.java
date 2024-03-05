@@ -40,6 +40,11 @@ public abstract class BaseScreen {
         }
     }
 
+    public String getTextElement(WebElement element){
+        isElementDisplayed(element);
+        return element.getText();
+    }
+
     public BaseScreen(AndroidDriver driver){
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);

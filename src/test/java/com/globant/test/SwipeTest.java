@@ -36,6 +36,7 @@ public class SwipeTest extends BaseTest {
 
         softAssert.assertTrue(swipeScreen.isVisibleHiddenLogo());
         softAssert.assertTrue(swipeScreen.isVisibleHiddenMessage());
+        softAssert.assertEquals(swipeScreen.getHiddenMessageText(), "You found me!!!");
 
         softAssert.assertAll();
 

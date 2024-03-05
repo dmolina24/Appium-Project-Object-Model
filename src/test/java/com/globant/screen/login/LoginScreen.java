@@ -18,10 +18,6 @@ public class LoginScreen extends AuthScreen {
         return new SuccessPopUpScreen(driver);
     }
 
-
-
-
-
     public LoginScreen(AndroidDriver driver) {
         super(driver);
     }

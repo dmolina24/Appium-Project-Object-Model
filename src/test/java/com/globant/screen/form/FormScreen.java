@@ -54,18 +54,15 @@ public class FormScreen extends NavBarScreen {
 
 
     public String getTitleText(){
-        isElementDisplayed(formTitle);
-        return formTitle.getText();
+        return getTextElement(formTitle);
     }
 
     public String getTextInputLabel(){
-        isElementDisplayed(inputFieldLabel);
-        return inputFieldLabel.getText();
+        return getTextElement(inputFieldLabel);
     }
 
     public String getTextInputField(){
-        isElementClickable(typedInput);
-        return typedInput.getText();
+        return getTextElement(typedInput);
     }
 
     public void setTextInputField(String text){
@@ -75,13 +72,11 @@ public class FormScreen extends NavBarScreen {
     }
 
     public String getTextTypedLabel(){
-        isElementDisplayed(typedLabel);
-        return typedLabel.getText();
+        return getTextElement(typedLabel);
     }
 
     public String getTextTypedInputText(){
-        isElementDisplayed(typedInputText);
-        return typedInputText.getText();
+        return getTextElement(typedInputText);
     }
 
     public String getTextSwitchLabel(){
@@ -105,13 +100,11 @@ public class FormScreen extends NavBarScreen {
     }
 
     public String getTextStateSwitchLabel(){
-        isElementDisplayed(stateSwitchLabel);
-        return stateSwitchLabel.getText();
+        return getTextElement(stateSwitchLabel);
     }
 
     public String getTextDropDownLabel(){
-        isElementDisplayed(dropDownLabel);
-        return  dropDownLabel.getText();
+        return getTextElement(dropDownLabel);
     }
 
     public void tapOnDropDown(){
