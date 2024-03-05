@@ -4,6 +4,26 @@
         <classes>
             <class name="com.globant.test.HomeTest"></class>
             <class name="com.globant.test.WebViewTest"></class>
+            <class name="com.globant.test.LoginTest">
+                <methods>
+                    <include name="checkContentLoginTest"/>
+                </methods>
+            </class>
+            <class name="com.globant.test.FormsTest">
+                <methods>
+                    <include name="checkContentForms"/>
+                </methods>
+            </class>
+            <class name="com.globant.test.SwipeTest">
+                <methods>
+                    <include name="checkContentSwipe"/>
+                </methods>
+            </class>
+            <class name="com.globant.test.DragTest">
+                <methods>
+                    <include name="checkContentDrag"/>
+                </methods>
+            </class>
         </classes>
     </test>
     <test name="SignUp">

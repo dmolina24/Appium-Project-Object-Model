@@ -66,6 +66,12 @@ public class FormScreen extends BaseScreen {
         return typedInput.getText();
     }
 
+    public void setTextInputField(String text){
+        isElementClickable(typedInput);
+        typedInput.click();
+        typedInput.sendKeys(text);
+    }
+
     public String getTextTypedLabel(){
         isElementDisplayed(typedLabel);
         return typedLabel.getText();
@@ -104,6 +110,11 @@ public class FormScreen extends BaseScreen {
     public String getTextDropDownLabel(){
         isElementDisplayed(dropDownLabel);
         return  dropDownLabel.getText();
+    }
+
+    public void tapOnDropDown(){
+        isElementClickable(dropDown);
+        dropDown.click();
     }
 
     public FormScreen(AndroidDriver driver) {

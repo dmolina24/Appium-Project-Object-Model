@@ -12,10 +12,7 @@ public class WebViewTest extends BaseTest {
     public void checkWebViewNavBar() {
         System.out.println("Test Check Web View Bar");
 
-        LoginScreen loginScreen = webViewScreen.tapOnLoginBtn();
-        FormScreen formScreen = loginScreen.tapOnFormsBtn();
-        SwipeScreen swipeScreen = formScreen.tapOnSwipeBtn();
-        DragScreen dragScreen = swipeScreen.tapOnDragBtn();
+        loginScreen = webViewScreen.tapOnLoginBtn();
 
         softAssert.assertAll();
     }

@@ -1,7 +1,10 @@
 package com.globant.test;
 
 import com.github.javafaker.Faker;
+import com.globant.screen.DragScreen;
 import com.globant.screen.HomeScreen;
+import com.globant.screen.SwipeScreen;
+import com.globant.screen.form.FormScreen;
 import com.globant.screen.login.SignUpScreen;
 import com.globant.screen.login.SuccessPopUpScreen;
 import com.globant.utils.test.BaseTest;
@@ -11,6 +14,14 @@ import org.testng.annotations.Test;
 import java.util.Random;
 
 public class LoginTest extends BaseTest {
+
+    @Test
+    public void checkContentLoginTest(){
+        formScreen = loginScreen.tapOnFormsBtn();
+
+
+        softAssert.assertAll();
+    }
 
     @Test
     public void checkSignUp(){
