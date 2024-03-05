@@ -1,15 +1,27 @@
 package com.globant.test;
 
 import com.github.javafaker.Faker;
+import com.globant.screen.DragScreen;
 import com.globant.screen.HomeScreen;
-import com.globant.screen.auth.SignUpScreen;
-import com.globant.screen.auth.SuccessPopUpScreen;
+import com.globant.screen.SwipeScreen;
+import com.globant.screen.form.FormScreen;
+import com.globant.screen.login.SignUpScreen;
+import com.globant.screen.login.SuccessPopUpScreen;
 import com.globant.utils.test.BaseTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.Random;
 
 public class LoginTest extends BaseTest {
+
+    @Test
+    public void checkContentLoginTest(){
+        formScreen = loginScreen.tapOnFormsBtn();
+
+
+        softAssert.assertAll();
+    }
 
     @Test
     public void checkSignUp(){
@@ -29,25 +41,33 @@ public class LoginTest extends BaseTest {
         signUpScreen.setConfirmPassword(password);
 
         SuccessPopUpScreen signUpPopup = signUpScreen.tapOnSignUpBtn();
+
+        softAssert.assertEquals(signUpPopup.getTitlePopUpText(), "Signed Up!");
+        softAssert.assertEquals(signUpPopup.getMessagePopUpText(), "You successfully signed up!");
+        softAssert.assertEquals(signUpPopup.getPopYpBtnText(), "OK");
+        
         signUpPopup.onTapPopUpBtn();
 
         softAssert.assertAll();
     }
 
     @Test()
-    public void checkLogin(){
+    @Parameters({"email", "password"})
+    public void checkLogin(String email, String password ){
         homeScreen = new HomeScreen(driver);
         loginScreen = homeScreen.tapOnLoginBtn();
 
         checkNavBar(loginScreen);
 
-        String email = "poposaurio@gmail.com";
-        String password = "123456789";
-
         loginScreen.setEmailInput(email);
         loginScreen.setPasswordInput(password);
 
         SuccessPopUpScreen successPopUpScreen = loginScreen.tapOnLoginBtnRequest();
+
+        softAssert.assertEquals(successPopUpScreen.getTitlePopUpText(), "Success");
+        softAssert.assertEquals(successPopUpScreen.getMessagePopUpText(), "You are logged in!");
+        softAssert.assertEquals(successPopUpScreen.getPopYpBtnText(), "OK");
+
         successPopUpScreen.onTapPopUpBtn();
 
         softAssert.assertAll();

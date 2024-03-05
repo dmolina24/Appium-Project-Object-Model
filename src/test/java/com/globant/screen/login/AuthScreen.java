@@ -1,7 +1,6 @@
-package com.globant.screen.auth;
+package com.globant.screen.login;
 
 import com.globant.utils.screens.BaseScreen;
-import com.globant.utils.test.BaseTest;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;

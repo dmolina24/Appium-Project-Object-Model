@@ -3,6 +3,27 @@
     <test name="Navigation">
         <classes>
             <class name="com.globant.test.HomeTest"></class>
+            <class name="com.globant.test.WebViewTest"></class>
+            <class name="com.globant.test.LoginTest">
+                <methods>
+                    <include name="checkContentLoginTest"/>
+                </methods>
+            </class>
+            <class name="com.globant.test.FormsTest">
+                <methods>
+                    <include name="checkContentForms"/>
+                </methods>
+            </class>
+            <class name="com.globant.test.SwipeTest">
+                <methods>
+                    <include name="checkContentSwipe"/>
+                </methods>
+            </class>
+            <class name="com.globant.test.DragTest">
+                <methods>
+                    <include name="checkContentDrag"/>
+                </methods>
+            </class>
         </classes>
     </test>
     <test name="SignUp">
@@ -15,10 +36,21 @@
         </classes>
     </test>
     <test name="Login">
+        <parameter name="email" value="dinosaurio@gmail.com" />
+        <parameter name="password" value="12345678" />
         <classes>
             <class name="com.globant.test.LoginTest">
                 <methods>
                     <include name="checkLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Swipe Cards">
+        <classes>
+            <class name="com.globant.test.SwipeTest">
+                <methods>
+                    <include name="swipeCards"/>
                 </methods>
             </class>
         </classes>

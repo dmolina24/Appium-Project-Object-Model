@@ -1,7 +1,8 @@
 package com.globant.utils.test;
 
 import com.globant.screen.*;
-import com.globant.screen.auth.LoginScreen;
+import com.globant.screen.form.FormScreen;
+import com.globant.screen.login.LoginScreen;
 import com.globant.utils.screens.BaseScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;

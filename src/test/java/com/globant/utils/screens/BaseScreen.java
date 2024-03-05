@@ -1,7 +1,8 @@
 package com.globant.utils.screens;
 
 import com.globant.screen.*;
-import com.globant.screen.auth.LoginScreen;
+import com.globant.screen.form.FormScreen;
+import com.globant.screen.login.LoginScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -80,7 +81,7 @@ public class BaseScreen {
     }
 
     public boolean isElementDisplayed(WebElement element){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         try {
             wait.until(ExpectedConditions.visibilityOf(element));
             return element.isDisplayed();

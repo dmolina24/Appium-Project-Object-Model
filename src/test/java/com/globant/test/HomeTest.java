@@ -1,7 +1,5 @@
 package com.globant.test;
 
-import com.globant.screen.*;
-import com.globant.screen.auth.LoginScreen;
 import com.globant.utils.test.BaseTest;
 import org.testng.annotations.*;
 
@@ -39,14 +37,6 @@ public class HomeTest extends BaseTest {
         softAssert.assertFalse(homeScreen.isSupportLabelIsClickable());
 
         webViewScreen = homeScreen.tapOnWebViewBtn();
-
-        LoginScreen loginScreen = webViewScreen.tapOnLoginBtn();
-
-        FormScreen formScreen = loginScreen.tapOnFormsBtn();
-
-        SwipeScreen swipeScreen = formScreen.tapOnSwipeBtn();
-
-        DragScreen dragScreen = swipeScreen.tapOnDragBtn();
 
         softAssert.assertAll();
     }
