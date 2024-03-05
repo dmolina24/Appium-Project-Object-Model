@@ -1,8 +1,12 @@
 package com.globant.utils.test;
 
-import com.globant.screen.*;
+import com.globant.screen.NavBarScreen;
+import com.globant.screen.drag.DragScreen;
 import com.globant.screen.form.FormScreen;
+import com.globant.screen.home.HomeScreen;
 import com.globant.screen.login.LoginScreen;
+import com.globant.screen.swipe.SwipeScreen;
+import com.globant.screen.web.WebViewScreen;
 import com.globant.utils.screens.BaseScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -76,7 +80,7 @@ public class BaseTest {
         return properties.getProperty(variable);
     }
 
-    public static void checkNavBar(BaseScreen screen){
+    public static void checkNavBar(NavBarScreen screen){
         softAssert.assertTrue(screen.homeBtnIsDisplayed());
         softAssert.assertTrue(screen.homeBtnIsClickable());
         softAssert.assertTrue(screen.webViewBtnIsDisplayed());

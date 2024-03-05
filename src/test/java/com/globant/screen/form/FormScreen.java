@@ -1,5 +1,6 @@
 package com.globant.screen.form;
 
+import com.globant.screen.NavBarScreen;
 import com.globant.utils.screens.BaseScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -7,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class FormScreen extends BaseScreen {
+public class FormScreen extends NavBarScreen {
 
     @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.TextView\").text(\"Form components\")")
     private WebElement formTitle;

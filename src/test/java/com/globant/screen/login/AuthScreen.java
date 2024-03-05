@@ -1,5 +1,6 @@
 package com.globant.screen.login;
 
+import com.globant.screen.NavBarScreen;
 import com.globant.utils.screens.BaseScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -7,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class AuthScreen extends BaseScreen {
+public class AuthScreen extends NavBarScreen {
 
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.TextView\").text(\"Login / Sign up Form\")")
     private WebElement loginSignUpTitle;

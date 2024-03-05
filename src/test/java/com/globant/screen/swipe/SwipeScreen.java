@@ -1,5 +1,6 @@
-package com.globant.screen;
+package com.globant.screen.swipe;
 
+import com.globant.screen.NavBarScreen;
 import com.globant.utils.screens.BaseScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -15,7 +16,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 
-public class SwipeScreen extends BaseScreen {
+public class SwipeScreen extends NavBarScreen {
 
     @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.TextView\").text(\"Swipe horizontal\")")
     private WebElement titleSection;

@@ -1,6 +1,5 @@
 package com.globant.test;
 
-import com.globant.screen.HomeScreen;
 import com.globant.utils.test.BaseTest;
 import org.testng.annotations.Test;
 

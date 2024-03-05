@@ -1,10 +1,7 @@
 package com.globant.test;
 
 import com.github.javafaker.Faker;
-import com.globant.screen.DragScreen;
-import com.globant.screen.HomeScreen;
-import com.globant.screen.SwipeScreen;
-import com.globant.screen.form.FormScreen;
+import com.globant.screen.home.HomeScreen;
 import com.globant.screen.login.SignUpScreen;
 import com.globant.screen.login.SuccessPopUpScreen;
 import com.globant.utils.test.BaseTest;
@@ -45,7 +42,7 @@ public class LoginTest extends BaseTest {
         softAssert.assertEquals(signUpPopup.getTitlePopUpText(), "Signed Up!");
         softAssert.assertEquals(signUpPopup.getMessagePopUpText(), "You successfully signed up!");
         softAssert.assertEquals(signUpPopup.getPopYpBtnText(), "OK");
-        
+
         signUpPopup.onTapPopUpBtn();
 
         softAssert.assertAll();
