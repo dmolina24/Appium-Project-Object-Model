@@ -11,9 +11,6 @@ public class SwipeTest extends BaseTest {
         softAssert.assertEquals(swipeScreen.getTitleText(), "Swipe horizontal");
         softAssert.assertEquals(swipeScreen.getInstructionText(), "Or swipe vertical to find what I'm hiding.");
 
-        swipeScreen.swipeDown();
-        swipeScreen.isVisibleHiddenLogo();
-
         dragScreen = swipeScreen.tapOnDragBtn();
         softAssert.assertAll();
     }
@@ -30,12 +27,15 @@ public class SwipeTest extends BaseTest {
         swipeScreen.swipeRight();
         swipeScreen.swipeRight();
 
-        System.out.println("Hello wo");
+        swipeScreen.swipeLeft();
+        swipeScreen.swipeLeft();
+        swipeScreen.swipeLeft();
+        swipeScreen.swipeLeft();
 
-        swipeScreen.swipeLeft();
-        swipeScreen.swipeLeft();
-        swipeScreen.swipeLeft();
-        swipeScreen.swipeLeft();
+        swipeScreen.swipeDown();
+
+        softAssert.assertTrue(swipeScreen.isVisibleHiddenLogo());
+        softAssert.assertTrue(swipeScreen.isVisibleHiddenMessage());
 
         softAssert.assertAll();
 

@@ -33,20 +33,19 @@ public class SwipeScreen extends NavBarScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.TextView\").text(\"You found me!!!\");")
     private WebElement hiddenMessage;
 
-
     public String getTitleText(){
         isElementDisplayed(titleSection);
         return titleSection.getText();
     }
 
-    public Boolean isVisibleHiddenLogo(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        try {
-            wait.until(ExpectedConditions.visibilityOf(hiddenLogo));
-            return hiddenLogo.isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
+    public boolean isVisibleHiddenLogo(){
+        isElementDisplayed(hiddenLogo);
+        return hiddenLogo.isDisplayed();
+    }
+
+    public boolean isVisibleHiddenMessage(){
+        isElementDisplayed(hiddenMessage);
+        return hiddenMessage.isDisplayed();
     }
 
     public String getInstructionText(){
