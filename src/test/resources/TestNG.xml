@@ -48,9 +48,9 @@
     </test>
     <test name="Swipe Cards">
         <classes>
-            <class name="com.globant.test.HomeTest">
+            <class name="com.globant.test.SwipeTest">
                 <methods>
-                    <include name="SwipeCards"/>
+                    <include name="swipeCards"/>
                 </methods>
             </class>
         </classes>

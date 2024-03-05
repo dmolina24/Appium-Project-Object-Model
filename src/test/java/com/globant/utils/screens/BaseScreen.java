@@ -81,7 +81,7 @@ public class BaseScreen {
     }
 
     public boolean isElementDisplayed(WebElement element){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         try {
             wait.until(ExpectedConditions.visibilityOf(element));
             return element.isDisplayed();

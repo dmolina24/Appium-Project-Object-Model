@@ -41,6 +41,11 @@ public class LoginTest extends BaseTest {
         signUpScreen.setConfirmPassword(password);
 
         SuccessPopUpScreen signUpPopup = signUpScreen.tapOnSignUpBtn();
+
+        softAssert.assertEquals(signUpPopup.getTitlePopUpText(), "Signed Up!");
+        softAssert.assertEquals(signUpPopup.getMessagePopUpText(), "You successfully signed up!");
+        softAssert.assertEquals(signUpPopup.getPopYpBtnText(), "OK");
+        
         signUpPopup.onTapPopUpBtn();
 
         softAssert.assertAll();
@@ -58,6 +63,11 @@ public class LoginTest extends BaseTest {
         loginScreen.setPasswordInput(password);
 
         SuccessPopUpScreen successPopUpScreen = loginScreen.tapOnLoginBtnRequest();
+
+        softAssert.assertEquals(successPopUpScreen.getTitlePopUpText(), "Success");
+        softAssert.assertEquals(successPopUpScreen.getMessagePopUpText(), "You are logged in!");
+        softAssert.assertEquals(successPopUpScreen.getPopYpBtnText(), "OK");
+
         successPopUpScreen.onTapPopUpBtn();
 
         softAssert.assertAll();

@@ -16,6 +16,21 @@ public class SuccessPopUpScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.Button\").resourceId(\"android:id/button1\")")
     private WebElement popUpBtn;
 
+    public String getTitlePopUpText(){
+        isElementDisplayed(titlePopUp);
+        return titlePopUp.getText();
+    }
+
+    public String getMessagePopUpText(){
+        isElementDisplayed(messagePopUp);
+        return messagePopUp.getText();
+    }
+
+    public String getPopYpBtnText(){
+        isElementDisplayed(popUpBtn);
+        return popUpBtn.getText();
+    }
+
     public void onTapPopUpBtn(){
         isElementClickable(popUpBtn);
         popUpBtn.click();
