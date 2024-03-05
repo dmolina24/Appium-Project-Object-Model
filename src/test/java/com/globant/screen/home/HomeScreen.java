@@ -1,11 +1,12 @@
-package com.globant.screen;
+package com.globant.screen.home;
 
+import com.globant.screen.NavBarScreen;
 import com.globant.utils.screens.BaseScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 
-public class HomeScreen extends BaseScreen {
+public class HomeScreen extends NavBarScreen {
 
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.ImageView\").index(0)")
     private WebElement robotLogo;
