@@ -21,10 +21,10 @@ public class SignUpScreen extends AuthScreen {
         confirmPassword.sendKeys(password);
     }
 
-    public SignUpPopup tapOnSignUpBtn(){
+    public SuccessPopUpScreen tapOnSignUpBtn(){
         isElementClickable(signUpBtn);
         signUpBtn.click();
-        return new SignUpPopup(driver);
+        return new SuccessPopUpScreen(driver);
     }
 
 

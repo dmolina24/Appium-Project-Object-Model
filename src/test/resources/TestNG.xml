@@ -7,7 +7,20 @@
     </test>
     <test name="SignUp">
         <classes>
-            <class name="com.globant.test.LoginTest"></class>
+            <class name="com.globant.test.LoginTest">
+                <methods>
+                    <include name="checkSignUp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Login">
+        <classes>
+            <class name="com.globant.test.LoginTest">
+                <methods>
+                    <include name="checkLogin"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

@@ -2,8 +2,8 @@ package com.globant.test;
 
 import com.github.javafaker.Faker;
 import com.globant.screen.HomeScreen;
-import com.globant.screen.auth.SignUpPopup;
 import com.globant.screen.auth.SignUpScreen;
+import com.globant.screen.auth.SuccessPopUpScreen;
 import com.globant.utils.test.BaseTest;
 import org.testng.annotations.Test;
 
@@ -11,31 +11,46 @@ import java.util.Random;
 
 public class LoginTest extends BaseTest {
 
-    private String email;
-    private String password;
-
     @Test
     public void checkSignUp(){
+
         homeScreen = new HomeScreen(driver);
         loginScreen = homeScreen.tapOnLoginBtn();
+
         checkNavBar(loginScreen);
+
         SignUpScreen signUpScreen = loginScreen.tapOnsignUpTab();
 
-        email = generateRandomEmail();
-        password = generateRandomPassword(8);
+        String email = generateRandomEmail();
+        String password = generateRandomPassword(8);
 
         signUpScreen.setEmailInput(email);
         signUpScreen.setPasswordInput(password);
         signUpScreen.setConfirmPassword(password);
 
-        SignUpPopup signUpPopup = signUpScreen.tapOnSignUpBtn();
-        signUpPopup.onTapOkBtn();
+        SuccessPopUpScreen signUpPopup = signUpScreen.tapOnSignUpBtn();
+        signUpPopup.onTapPopUpBtn();
 
+        softAssert.assertAll();
     }
 
-    @Test(dependsOnMethods = {"checkSignUp"})
+    @Test()
     public void checkLogin(){
-        
+        homeScreen = new HomeScreen(driver);
+        loginScreen = homeScreen.tapOnLoginBtn();
+
+        checkNavBar(loginScreen);
+
+        String email = "poposaurio@gmail.com";
+        String password = "123456789";
+
+        loginScreen.setEmailInput(email);
+        loginScreen.setPasswordInput(password);
+
+        SuccessPopUpScreen successPopUpScreen = loginScreen.tapOnLoginBtnRequest();
+        successPopUpScreen.onTapPopUpBtn();
+
+        softAssert.assertAll();
     }
 
     private String generateRandomEmail(){
