@@ -1,8 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="MobileTest" verbose="1">
-    <test name="ScenarioNavigation">
+    <test name="Navigation">
         <classes>
             <class name="com.globant.test.HomeTest"></class>
+            <class name="com.globant.test.LoginTest"></class>
         </classes>
     </test>
 </suite>

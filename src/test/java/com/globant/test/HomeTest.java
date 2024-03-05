@@ -1,29 +1,21 @@
 package com.globant.test;
 
 import com.globant.screen.*;
+import com.globant.screen.auth.LoginScreen;
 import com.globant.utils.test.BaseTest;
 import org.testng.annotations.*;
 
 public class HomeTest extends BaseTest {
 
-    @Test
+    @Test(priority = 1)
     public void checkHomeNavBar() {
         homeScreen = getHomeScreen();
+        checkNavBar(homeScreen);
+        softAssert.assertAll();
+    }
 
-        softAssert.assertTrue(homeScreen.homeBtnIsDisplayed());
-        softAssert.assertTrue(homeScreen.homeBtnIsClickable());
-
-        softAssert.assertTrue(homeScreen.webViewBtnIsDisplayed());
-        softAssert.assertTrue(homeScreen.webViewBtnIsClickable());
-
-        softAssert.assertTrue(homeScreen.loginBtnIsDisplayed());
-        softAssert.assertTrue(homeScreen.loginBtnIsClickable());
-        softAssert.assertTrue(homeScreen.formsBtnIsDisplayed());
-        softAssert.assertTrue(homeScreen.formsBtnIsClickable());
-        softAssert.assertTrue(homeScreen.swipeBtnIsDisplayed());
-        softAssert.assertTrue(homeScreen.swipeBtnClickable());
-        softAssert.assertTrue(homeScreen.dragBtnIsDisplayed());
-        softAssert.assertTrue(homeScreen.dragBtnIsClickable());
+    @Test(priority = 2)
+    public void checkHomeContent(){
 
         softAssert.assertTrue(homeScreen.isRobotLogoIsDisplayed());
         softAssert.assertFalse(homeScreen.isRobotLogoIsClickable());
@@ -55,7 +47,7 @@ public class HomeTest extends BaseTest {
         SwipeScreen swipeScreen = formScreen.tapOnSwipeBtn();
 
         DragScreen dragScreen = swipeScreen.tapOnDragBtn();
-        
+
         softAssert.assertAll();
     }
 

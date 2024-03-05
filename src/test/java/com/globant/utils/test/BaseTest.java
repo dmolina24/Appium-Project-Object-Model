@@ -1,6 +1,7 @@
 package com.globant.utils.test;
 
 import com.globant.screen.*;
+import com.globant.screen.auth.LoginScreen;
 import com.globant.utils.screens.BaseScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -31,6 +32,7 @@ public class BaseTest {
     public void initAssert(){
         softAssert = new SoftAssert();
     }
+
     @AfterMethod
     public void afterMethod() {
         softAssert = null;
@@ -74,8 +76,18 @@ public class BaseTest {
     }
 
     public static void checkNavBar(BaseScreen screen){
-
-
+        softAssert.assertTrue(screen.homeBtnIsDisplayed());
+        softAssert.assertTrue(screen.homeBtnIsClickable());
+        softAssert.assertTrue(screen.webViewBtnIsDisplayed());
+        softAssert.assertTrue(screen.webViewBtnIsClickable());
+        softAssert.assertTrue(screen.loginBtnIsDisplayed());
+        softAssert.assertTrue(screen.loginBtnIsClickable());
+        softAssert.assertTrue(screen.formsBtnIsDisplayed());
+        softAssert.assertTrue(screen.formsBtnIsClickable());
+        softAssert.assertTrue(screen.swipeBtnIsDisplayed());
+        softAssert.assertTrue(screen.swipeBtnClickable());
+        softAssert.assertTrue(screen.dragBtnIsDisplayed());
+        softAssert.assertTrue(screen.dragBtnIsClickable());
     }
 
     public HomeScreen getHomeScreen(){
