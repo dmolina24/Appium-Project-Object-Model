@@ -52,6 +52,7 @@ public class FormScreen extends NavBarScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.TextView\").text(\"Inactive\")")
     private WebElement inactiveBtn;
 
+
     public String getTitleText(){
         isElementDisplayed(formTitle);
         return formTitle.getText();
@@ -121,4 +122,5 @@ public class FormScreen extends NavBarScreen {
     public FormScreen(AndroidDriver driver) {
         super(driver);
     }
+
 }
