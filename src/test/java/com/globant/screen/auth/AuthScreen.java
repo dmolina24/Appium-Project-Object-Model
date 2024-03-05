@@ -36,6 +36,19 @@ public class AuthScreen extends BaseScreen {
         signUpTab.click();
         return new SignUpScreen(driver);
     }
+
+    public void setEmailInput(String email){
+        isElementClickable(emailInput);
+        emailInput.click();
+        emailInput.sendKeys(email);
+    }
+
+    public void setPasswordInput(String password){
+        isElementClickable(passwordInput);
+        passwordInput.click();
+        passwordInput.sendKeys(password);
+    }
+
     public AuthScreen(AndroidDriver driver) {
         super(driver);
     }

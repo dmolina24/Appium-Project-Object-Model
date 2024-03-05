@@ -3,6 +3,10 @@
     <test name="Navigation">
         <classes>
             <class name="com.globant.test.HomeTest"></class>
+        </classes>
+    </test>
+    <test name="SignUp">
+        <classes>
             <class name="com.globant.test.LoginTest"></class>
         </classes>
     </test>
