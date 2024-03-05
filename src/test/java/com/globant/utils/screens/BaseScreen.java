@@ -1,7 +1,8 @@
 package com.globant.utils.screens;
 
 import com.globant.screen.*;
-import com.globant.screen.auth.LoginScreen;
+import com.globant.screen.form.FormScreen;
+import com.globant.screen.login.LoginScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;

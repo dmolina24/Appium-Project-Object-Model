@@ -1,4 +1,4 @@
-package com.globant.screen.auth;
+package com.globant.screen.login;
 
 import com.globant.utils.screens.BaseScreen;
 import io.appium.java_client.android.AndroidDriver;

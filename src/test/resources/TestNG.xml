@@ -26,4 +26,13 @@
             </class>
         </classes>
     </test>
+    <test name="Swipe Cards">
+        <classes>
+            <class name="com.globant.test.HomeTest">
+                <methods>
+                    <include name="SwipeCards"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>

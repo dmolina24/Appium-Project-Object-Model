@@ -1,7 +1,5 @@
 package com.globant.test;
 
-import com.globant.screen.*;
-import com.globant.screen.auth.LoginScreen;
 import com.globant.utils.test.BaseTest;
 import org.testng.annotations.*;
 

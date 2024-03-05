@@ -2,8 +2,8 @@ package com.globant.test;
 
 import com.github.javafaker.Faker;
 import com.globant.screen.HomeScreen;
-import com.globant.screen.auth.SignUpScreen;
-import com.globant.screen.auth.SuccessPopUpScreen;
+import com.globant.screen.login.SignUpScreen;
+import com.globant.screen.login.SuccessPopUpScreen;
 import com.globant.utils.test.BaseTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -42,7 +42,7 @@ public class LoginTest extends BaseTest {
         loginScreen = homeScreen.tapOnLoginBtn();
 
         checkNavBar(loginScreen);
-        
+
         loginScreen.setEmailInput(email);
         loginScreen.setPasswordInput(password);
 
