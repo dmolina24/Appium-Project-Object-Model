@@ -5,6 +5,7 @@ import com.globant.screen.HomeScreen;
 import com.globant.screen.auth.SignUpScreen;
 import com.globant.screen.auth.SuccessPopUpScreen;
 import com.globant.utils.test.BaseTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.Random;
@@ -35,15 +36,13 @@ public class LoginTest extends BaseTest {
     }
 
     @Test()
-    public void checkLogin(){
+    @Parameters({"email", "password"})
+    public void checkLogin(String email, String password ){
         homeScreen = new HomeScreen(driver);
         loginScreen = homeScreen.tapOnLoginBtn();
 
         checkNavBar(loginScreen);
-
-        String email = "poposaurio@gmail.com";
-        String password = "123456789";
-
+        
         loginScreen.setEmailInput(email);
         loginScreen.setPasswordInput(password);
 

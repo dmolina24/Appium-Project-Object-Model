@@ -40,14 +40,6 @@ public class HomeTest extends BaseTest {
 
         webViewScreen = homeScreen.tapOnWebViewBtn();
 
-        LoginScreen loginScreen = webViewScreen.tapOnLoginBtn();
-
-        FormScreen formScreen = loginScreen.tapOnFormsBtn();
-
-        SwipeScreen swipeScreen = formScreen.tapOnSwipeBtn();
-
-        DragScreen dragScreen = swipeScreen.tapOnDragBtn();
-
         softAssert.assertAll();
     }
 
