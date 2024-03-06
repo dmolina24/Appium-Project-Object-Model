@@ -33,78 +33,34 @@ public class SwipeScreen extends NavBarScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.TextView\").text(\"You found me!!!\");")
     private WebElement hiddenMessage;
 
-
     public String getTitleText(){
-        isElementDisplayed(titleSection);
-        return titleSection.getText();
+        return getTextElement(titleSection);
     }
 
-    public Boolean isVisibleHiddenLogo(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        try {
-            wait.until(ExpectedConditions.visibilityOf(hiddenLogo));
-            return hiddenLogo.isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
+    public boolean isVisibleHiddenLogo(){
+        isElementDisplayed(hiddenLogo);
+        return hiddenLogo.isDisplayed();
+    }
+
+    public boolean isVisibleHiddenMessage(){
+        isElementDisplayed(hiddenMessage);
+        return hiddenMessage.isDisplayed();
+    }
+
+    public String getHiddenMessageText(){
+        isElementDisplayed(hiddenMessage);
+        return hiddenMessage.getText();
     }
 
     public String getInstructionText(){
-        isElementDisplayed(instructionsMessage);
-        return instructionsMessage.getText();
+        return getTextElement(instructionsMessage);
     }
 
     public int getNumberOfCard(){
         return cards.size();
     }
 
-    private void swipe(int startX, int startY, int endX, int endY, int durationOnMilli){
-        Point start = new Point(startX, startY);
-        Point end = new Point(endX, endY);
-        Duration duration = Duration.ofMillis(durationOnMilli);
 
-        PointerInput input = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
-        Sequence swipe = new Sequence(input,0);
-        swipe.addAction(input.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), start.x, start.y));
-        swipe.addAction(input.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        swipe.addAction(input.createPointerMove(duration, PointerInput.Origin.viewport(), end.x, end.y));
-        swipe.addAction(input.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-
-        driver.perform(Arrays.asList(swipe));
-    }
-
-    public void swipeDown(){
-        Dimension size = driver.manage().window().getSize();
-
-        int startX = (int) (size.getWidth() * 0.5);
-        int startY = (int) (size.getHeight() * 0.4);
-        int endY = 0;
-
-        swipe(startX, startY, startX, endY, 200 );
-    }
-
-    public void swipeRight(){
-
-        Dimension size = driver.manage().window().getSize();
-
-        int startX = (int) (size.getWidth() * 0.8);
-        int endX =  (int) (size.getWidth() * 0.2);
-        int startY = (int) (size.getHeight() * 0.7);
-
-        swipe(startX, startY, endX, startY, 1000);
-
-    }
-
-    public void swipeLeft(){
-
-        Dimension size = driver.manage().window().getSize();
-
-        int startX = (int) (size.getWidth() * 0.2);
-        int endX =  (int) (size.getWidth() * 0.8);
-        int startY = (int) (size.getHeight() * 0.7);
-
-        swipe(startX, startY, endX, startY, 1000);
-    }
 
     public SwipeScreen(AndroidDriver driver) {
         super(driver);

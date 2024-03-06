@@ -17,18 +17,15 @@ public class SuccessPopUpScreen extends BaseScreen {
     private WebElement popUpBtn;
 
     public String getTitlePopUpText(){
-        isElementDisplayed(titlePopUp);
-        return titlePopUp.getText();
+        return getTextElement(titlePopUp);
     }
 
     public String getMessagePopUpText(){
-        isElementDisplayed(messagePopUp);
-        return messagePopUp.getText();
+        return getTextElement(messagePopUp);
     }
 
     public String getPopYpBtnText(){
-        isElementDisplayed(popUpBtn);
-        return popUpBtn.getText();
+        return getTextElement(popUpBtn);
     }
 
     public void onTapPopUpBtn(){

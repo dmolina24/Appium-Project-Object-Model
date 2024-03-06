@@ -25,8 +25,6 @@ public class SignUpScreen extends AuthScreen {
         return new SuccessPopUpScreen(driver);
     }
 
-
-
     public SignUpScreen(AndroidDriver driver) {
         super(driver);
     }

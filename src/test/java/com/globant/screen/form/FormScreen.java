@@ -22,7 +22,7 @@ public class FormScreen extends NavBarScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.TextView\").text(\"You have typed:\")")
     private WebElement typedLabel;
 
-    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.TextView\").description(\"input-text-result\"")
+    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.TextView\").description(\"input-text-result\")")
     private WebElement typedInputText;
 
     @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.TextView\").text(\"Switch:\")")
@@ -52,20 +52,29 @@ public class FormScreen extends NavBarScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.TextView\").text(\"Inactive\")")
     private WebElement inactiveBtn;
 
+    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.CheckedTextView\").resourceId(\"android:id/text1\").index(0)")
+    private WebElement defaultOptionDropDown;
+
+    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.CheckedTextView\").resourceId(\"android:id/text1\").index(1)")
+    private WebElement firstOptionDropDown;
+
+    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.CheckedTextView\").resourceId(\"android:id/text1\").index(2)")
+    private WebElement secondOptionDropDown;
+
+    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.widget.CheckedTextView\").resourceId(\"android:id/text1\").index(3)")
+    private WebElement thirdOptionDropDown;
+
 
     public String getTitleText(){
-        isElementDisplayed(formTitle);
-        return formTitle.getText();
+        return getTextElement(formTitle);
     }
 
     public String getTextInputLabel(){
-        isElementDisplayed(inputFieldLabel);
-        return inputFieldLabel.getText();
+        return getTextElement(inputFieldLabel);
     }
 
     public String getTextInputField(){
-        isElementClickable(typedInput);
-        return typedInput.getText();
+        return getTextElement(typedInput);
     }
 
     public void setTextInputField(String text){
@@ -75,13 +84,11 @@ public class FormScreen extends NavBarScreen {
     }
 
     public String getTextTypedLabel(){
-        isElementDisplayed(typedLabel);
-        return typedLabel.getText();
+        return getTextElement(typedLabel);
     }
 
     public String getTextTypedInputText(){
-        isElementDisplayed(typedInputText);
-        return typedInputText.getText();
+        return getTextElement(typedInputText);
     }
 
     public String getTextSwitchLabel(){
@@ -104,19 +111,67 @@ public class FormScreen extends NavBarScreen {
         return Boolean.parseBoolean(switchBtn.getAttribute("enabled"));
     }
 
-    public String getTextStateSwitchLabel(){
-        isElementDisplayed(stateSwitchLabel);
-        return stateSwitchLabel.getText();
+    public void tapOnSwitchBtn(){
+        isElementClickable(switchBtn);
+        switchBtn.click();
     }
 
+    public String getTextStateSwitchLabel(){return getTextElement(stateSwitchLabel);}
+
     public String getTextDropDownLabel(){
-        isElementDisplayed(dropDownLabel);
-        return  dropDownLabel.getText();
+        return getTextElement(dropDownLabel);
     }
 
     public void tapOnDropDown(){
         isElementClickable(dropDown);
         dropDown.click();
+    }
+
+    public String getDropDowntext(){
+        return getTextElement(dropDown);
+    }
+
+    public void tapOnDefaultOptionDropDown(){
+        isElementClickable(defaultOptionDropDown);
+        defaultOptionDropDown.click();
+    }
+
+    public String getTextDefaultOptionDropDown(){
+        return getTextElement(defaultOptionDropDown);
+    }
+
+    public String getTextFirstOptionDropDown(){
+        return getTextElement(firstOptionDropDown);
+    }
+
+    public String getTextSecondOptionDropDown(){
+        return getTextElement(secondOptionDropDown);
+    }
+
+    public String getTextThirdOptionDropDown(){
+        return getTextElement(thirdOptionDropDown);
+    }
+
+    public String getActiveBtnText(){
+        return getTextElement(activeBtn);
+    }
+
+    public BtnPopUp tapOnActiveBtn(){
+        isElementClickable(activeBtn);
+        activeBtn.click();
+        return new BtnPopUp(driver);
+    }
+
+    public boolean isClickableInactiveBtn(){
+        return isElementClickable(inactiveBtn);
+    }
+
+    public String getInactiveBtnText(){
+       return getTextElement(inactiveBtn);
+    }
+
+    public String getTextButtonLabel(){
+        return getTextElement(buttonsLabel);
     }
 
     public FormScreen(AndroidDriver driver) {

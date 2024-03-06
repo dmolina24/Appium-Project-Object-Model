@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 public class WebViewTest extends BaseTest {
     @Test
     public void checkWebViewNavBar() {
-        System.out.println("Test Check Web View Bar");
 
+        checkNavBar(webViewScreen);
         loginScreen = webViewScreen.tapOnLoginBtn();
 
         softAssert.assertAll();
