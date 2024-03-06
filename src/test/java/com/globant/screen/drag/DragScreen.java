@@ -38,7 +38,7 @@ public class DragScreen extends NavBarScreen {
     @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.view.ViewGroup\").description(\"drop-c3\")")
     private WebElement squareC32;
 
-    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.view.ViewGroup\").description(\"dro")
+    @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.view.ViewGroup\").description(\"drag-c2\")")
     private WebElement squareC33;
 
     @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.view.ViewGroup\").description(\"drag-l2\")")
@@ -122,6 +122,52 @@ public class DragScreen extends NavBarScreen {
         isElementDisplayed(squareC33);
         return squareC33.isDisplayed();
     }
+
+    public boolean isVisibleSolutionSquare1(){
+        isElementDisplayed(squareSolution1);
+        return squareSolution1.isDisplayed();
+    }
+
+    public boolean isVisibleSolutionSquare2(){
+        isElementDisplayed(squareSolution2);
+        return squareSolution2.isDisplayed();
+    }
+
+    public boolean isVisibleSolutionSquare3(){
+        isElementDisplayed(squareSolution3);
+        return squareSolution3.isDisplayed();
+    }
+
+    public boolean isVisibleSolutionSquare4(){
+        isElementDisplayed(squareSolution4);
+        return squareSolution4.isDisplayed();
+    }
+
+    public boolean isVisibleSolutionSquare5(){
+        isElementDisplayed(squareSolution5);
+        return squareSolution5.isDisplayed();
+    }
+
+    public boolean isVisibleSolutionSquare6(){
+        isElementDisplayed(squareSolution6);
+        return squareSolution6.isDisplayed();
+    }
+
+    public boolean isVisibleSolutionSquare7(){
+        isElementDisplayed(squareSolution7);
+        return squareSolution7.isDisplayed();
+    }
+
+    public boolean isVisibleSolutionSquare8(){
+        isElementDisplayed(squareSolution8);
+        return squareSolution8.isDisplayed();
+    }
+
+    public boolean isVisibleSolutionSquare9(){
+        isElementDisplayed(squareSolution9);
+        return squareSolution9.isDisplayed();
+    }
+
 
     public DragScreen(AndroidDriver driver) {
         super(driver);
