@@ -11,6 +11,8 @@ public class SwipeTest extends BaseTest {
         softAssert.assertEquals(swipeScreen.getTitleText(), "Swipe horizontal");
         softAssert.assertEquals(swipeScreen.getInstructionText(), "Or swipe vertical to find what I'm hiding.");
 
+        checkNavBar(swipeScreen);
+
         dragScreen = swipeScreen.tapOnDragBtn();
         softAssert.assertAll();
     }
@@ -19,8 +21,6 @@ public class SwipeTest extends BaseTest {
     public void swipeCards(){
         homeScreen = getHomeScreen();
         swipeScreen = homeScreen.tapOnSwipeBtn();
-
-        checkNavBar(swipeScreen);
 
         swipeScreen.swipeRight();
         swipeScreen.swipeRight();

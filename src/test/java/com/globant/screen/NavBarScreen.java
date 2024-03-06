@@ -11,7 +11,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 
-public abstract class NavBarScreen extends BaseScreen {
+public class NavBarScreen extends BaseScreen {
 
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.view.View\").description(\"Home\")")
     protected WebElement homeBtn;

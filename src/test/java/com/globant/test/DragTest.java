@@ -6,7 +6,7 @@ public class DragTest extends BaseTest {
 
     @Test
     public void checkContentDrag(){
-
+        checkNavBar(dragScreen);
         softAssert.assertEquals(dragScreen.getTitleSectionText(), "Drag and Drop");
 
         softAssert.assertTrue(dragScreen.isVisibleResetBtn());
@@ -29,6 +29,8 @@ public class DragTest extends BaseTest {
         softAssert.assertTrue(dragScreen.isVisibleSolutionSquare7());
         softAssert.assertTrue(dragScreen.isVisibleSolutionSquare8());
         softAssert.assertTrue(dragScreen.isVisibleSolutionSquare9());
+
+        dragScreen.tapOnHomeBtn();
 
         softAssert.assertAll();
     }
