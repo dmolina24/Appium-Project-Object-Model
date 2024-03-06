@@ -26,6 +26,9 @@ public class SwipeTest extends BaseTest {
         swipeScreen.swipeRight();
         swipeScreen.swipeRight();
         swipeScreen.swipeRight();
+        swipeScreen.swipeRight();
+
+        softAssert.assertEquals(swipeScreen.getNumberOfCard(), 1);
 
         swipeScreen.swipeLeft();
         swipeScreen.swipeLeft();
