@@ -72,7 +72,7 @@ public class FormsTest extends BaseTest {
         btnPopUp = formScreen.tapOnActiveBtn();
         btnPopUp.tapOnAskLaterBtn();
         btnPopUp = null;
-        
+
         swipeScreen = formScreen.tapOnSwipeBtn();
         softAssert.assertAll();
     }
